@@ -1,10 +1,11 @@
 {
   "name": "consulta-cuil-ui",
   "version": "0.0.0",
+  "ng": "node_modules/@angular/cli/bin/ng",
   "scripts": {
-    "ng": "ng",
-    "start": "ng build; node set-config.js ;node app.js",
-    "build": "ng build",
+    "ng": "$npm_package_ng",
+    "start": "$npm_package_ng build; node set-config.js ;node app.js",
+    "build": "$npm_package_ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
