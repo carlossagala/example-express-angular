@@ -1,3 +1,3 @@
 export class Constants {
-    public static API_ENDPOINT='consulta-api/';
+    public static API_ENDPOINT='/consulta-api/';
  }
