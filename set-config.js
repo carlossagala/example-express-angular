@@ -36,12 +36,3 @@ try {
 catch (error) {
   console.error('Error occurred:', error);
 }
-
-//------------------------ENDPOINTS API-REST-------------------
-const CONSULTAS_API = process.env.CONSULTAS_API || '/';
-
-const ConsultaApiOptions = {
-  files: files,
-  from: 'CONSULTAS_API',
-  to: CONSULTAS_API,
-};

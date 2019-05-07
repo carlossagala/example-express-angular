@@ -1,8 +1,16 @@
-var express = require('express');
-var app = express();
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-var port = process.env.PORT || 3000;
+
+let compression = require('compression');
+let express = require('express');
+let logger = require('morgan');
+let https = require('https');
+let http = require('http');
+let bodyParser = require('body-parser')
+
+let proxy = require('http-proxy-middleware');
+
+let app = express();
+
+var port = process.env.PORT || 8080;
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var router = express.Router();
 
@@ -13,6 +21,21 @@ router.get('*', function(req, res){
     res.sendFile('index.html', { root: __dirname + '/dist' });
 });
 
+// proxy for consulta cuil backend
+
+app.set('consulta-service', process.env.CONSULTA_ENDPOINT || 'http://consulta-app:8080');
+app.use(
+  '/consulta-api/*',
+  proxy({
+    target: app.get('consulta-service'),
+    secure: false,
+    changeOrigin: true,
+    logLevel: 'debug',
+    pathRewrite: {
+      '^/consulta-service': ''
+    }
+  })
+);
 /****************************** /Router ***************************/
 
 //app.use(morgan('dev')); // log every request to the console
