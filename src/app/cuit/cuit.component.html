@@ -1,0 +1,14 @@
+
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Cuit</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Small" [(ngModel)]="cuit" aria-describedby="inputGroup-sizing-sm">
+</div>
+
+<button type="button" class="btn " (click)="consultarCuit()"> Consultar Cuit </button>
+
+
+<div class="container-fluid" *ngIf="resultado" >
+  {{resultado | json}}
+</div>
