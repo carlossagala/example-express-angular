@@ -16,7 +16,7 @@ export class CuitService {
 
   consultarCuit(cuit: string): Observable<any>{
 
-    return this.http.get<any>(Constants.API_ENDPOINT + '/api/cuit/' + cuit);
+    return this.http.get<any>(Constants.API_ENDPOINT + 'api/cuit/' + cuit);
 
   }
 
