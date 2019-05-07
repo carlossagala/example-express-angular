@@ -24,6 +24,11 @@ router.get('*', function(req, res){
 // proxy for consulta cuil backend
 
 app.set('consulta-service', process.env.CONSULTA_ENDPOINT || 'http://consulta-app:8080');
+
+app.use(compression());
+
+app.use(logger('combined'));
+
 app.use(
   '/consulta-api/*',
   proxy({
