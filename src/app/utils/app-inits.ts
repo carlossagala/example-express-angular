@@ -1,5 +1,5 @@
 import { KeycloakService } from 'keycloak-angular';
-import {Constants} from './utils/constants'
+import {Constants} from './constants'
 import { environment } from '../../environments/environment';
 
 export function initializer(keycloak: KeycloakService): () => Promise<any> {
@@ -8,9 +8,10 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
 
 
       try {
+        debugger
         if(Constants.KEYCLOAK_ENABLE === 'false'){
           console.log('RHSSO no esta habilitado')
-        }else{
+        } else {
         await keycloak.init({
           config: environment.keycloak,
           initOptions: {

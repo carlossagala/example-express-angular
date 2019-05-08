@@ -13,25 +13,25 @@ const files = 'dist/main.*'
 
 const enableRHSSOptions = {
   files: files,
-  from: 'KEYCLOAK_ENABLE',
+  from: 'KEYCLOAK_ENABLE_REPLACEABLE',
   to: KEYCLOAK_ENABLE,
 };
 
 const authUrlOptions = {
   files: files,
-  from: 'AUTH_URL',
+  from: 'AUTH_URL_REPLACEABLE',
   to: AUTH_URL,
 };
 
 const clientNameOptions = {
   files: files,
-  from: 'CLIENT_SSO',
+  from: 'CLIENT_SSO_REPLACEABLE',
   to: CLIENT_SSO,
 };
 
 const realmNameOptions = {
   files: files,
-  from: 'REALM_SSO',
+  from: 'REALM_SSO_REPLACEABLE',
   to: REALM_SSO,
 };
 
@@ -48,10 +48,10 @@ catch (error) {
 //--------ANGULAR-CONSTANTS----------------------
 
 
-const CONSULTA_ENDPOINT = process.env.CONSULTA_ENDPOINT || 'http://localhost:8080'
+const CONSULTA_ENDPOINT = process.env.CONSULTA_ENDPOINT || 'http://localhost:5000'
 const consultaOptions = {
   files: files,
-  from: 'CONSULTA_ENDPOINT',
+  from: 'CONSULTA_ENDPOINT_REPLACEABLE',
   to: CONSULTA_ENDPOINT,
 };
 
