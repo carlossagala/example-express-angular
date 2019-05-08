@@ -2,13 +2,20 @@
 
 
 const replace = require('replace-in-file');
-
 //------------------------RHSSO-----------------------------
+const KEYCLOAK_ENABLE = process.env.KEYCLOAK_ENABLE || 'true';
 const AUTH_URL = process.env.AUTH_URL || 'http://localhost:8080/auth';
 const CLIENT_SSO = process.env.CLIENT_SSO || 'ui'
 const REALM_SSO = process.env.REALM_SSO || 'net-core'
 const files = 'dist/main.*'
 
+
+
+const enableRHSSOptions = {
+  files: files,
+  from: 'KEYCLOAK_ENABLE',
+  to: KEYCLOAK_ENABLE,
+};
 
 const authUrlOptions = {
   files: files,
@@ -32,12 +39,12 @@ try {
   replace.sync(authUrlOptions);
   replace.sync(clientNameOptions);
   replace.sync(realmNameOptions);
+  replace.sync(enableRHSSOptions);
+
 }
 catch (error) {
   console.error('Error occurred:', error);
 }
-
-
 //--------ANGULAR-CONSTANTS----------------------
 
 

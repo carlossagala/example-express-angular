@@ -12,7 +12,7 @@ const routes: Routes = [  {
 },{
   path: 'cuit',
   component: CuitComponent,
-  canActivate: [AppAuthGuard],
+  //canActivate: [AppAuthGuard],
 //  data: { roles: ['normal'] }
 
 }];
