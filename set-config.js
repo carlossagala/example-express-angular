@@ -42,8 +42,15 @@ catch (error) {
 
 
 const CONSULTA_ENDPOINT = process.env.CONSULTA_ENDPOINT || ''
-const realmNameOptions = {
+const consultaOptions = {
   files: files,
   from: 'CONSULTA_ENDPOINT',
   to: CONSULTA_ENDPOINT,
 };
+
+try {
+  replace.sync(consultaOptions);
+}
+catch (error) {
+  console.error('Error occurred:', error);
+}
