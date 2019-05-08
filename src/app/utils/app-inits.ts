@@ -8,7 +8,7 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
 
 
       try {
-        debugger
+        
         if(Constants.KEYCLOAK_ENABLE === 'false'){
           console.log('RHSSO no esta habilitado')
         } else {

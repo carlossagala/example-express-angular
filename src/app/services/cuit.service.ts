@@ -12,7 +12,6 @@ export class CuitService {
   constructor(protected keycloakService: KeycloakService, private http: HttpClient) { }
 
   consultarCuit(cuit: string): Observable<any>{
-    debugger
     return this.http.get<any>(Constants.API_ENDPOINT + '/api/cuit/' + cuit);
 
   }
