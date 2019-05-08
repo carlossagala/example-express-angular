@@ -41,7 +41,7 @@ catch (error) {
 //--------ANGULAR-CONSTANTS----------------------
 
 
-const CONSULTA_ENDPOINT = process.env.CONSULTA_ENDPOINT || ''
+const CONSULTA_ENDPOINT = process.env.CONSULTA_ENDPOINT || 'http://localhost:8080'
 const consultaOptions = {
   files: files,
   from: 'CONSULTA_ENDPOINT',
