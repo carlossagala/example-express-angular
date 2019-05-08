@@ -4,9 +4,9 @@
 const replace = require('replace-in-file');
 
 //------------------------RHSSO-----------------------------
-const AUTH_URL = process.env.AUTH_URL || 'http://sso-72-sqlserver-anses.appslab.anses.gob.ar/auth';
+const AUTH_URL = process.env.AUTH_URL || 'http://localhost:8080/auth';
 const CLIENT_SSO = process.env.CLIENT_SSO || 'ui'
-const REALM_SSO = process.env.REALM_SSO || 'arquitectura'
+const REALM_SSO = process.env.REALM_SSO || 'net-core'
 const files = 'dist/main.*'
 
 
@@ -36,3 +36,14 @@ try {
 catch (error) {
   console.error('Error occurred:', error);
 }
+
+
+//--------ANGULAR-CONSTANTS----------------------
+
+
+const CONSULTA_ENDPOINT = process.env.CONSULTA_ENDPOINT || ''
+const realmNameOptions = {
+  files: files,
+  from: 'CONSULTA_ENDPOINT',
+  to: CONSULTA_ENDPOINT,
+};
