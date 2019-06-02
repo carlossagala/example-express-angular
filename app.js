@@ -15,6 +15,11 @@ var port = process.env.PORT || 8080;
 console.log('——————————- Run on port '+ port);
 app.use(express.static(__dirname+ '/dist'));
 
+//delega el manejo de las rutas a la aplicacion frontend
+app.get('*', (req, res) => {
+    res.sendFile(__dirname+ '/dist/index.html');
+  });
+
 app.use(compression());
 
 app.use(bodyParser.urlencoded({extended:true}));

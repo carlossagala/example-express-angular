@@ -1,0 +1,20 @@
+.header-blue {
+    background: #005296;
+}
+
+.logo {
+    display: block;
+    text-indent: -9999px;
+    width: 100px;
+    background-size: 100px 82px;
+  }
+
+.anses-nav-element {
+    padding-top: 20px;
+    
+}
+
+.anses-nav-element.anses-nav-element-font {
+    color: aliceblue;
+}
+  

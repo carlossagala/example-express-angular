@@ -23,7 +23,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/argob-poncho/dist/css/roboto-fontface.css",
+              "node_modules/argob-poncho/dist/css/poncho.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true

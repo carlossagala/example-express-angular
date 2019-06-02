@@ -16,8 +16,6 @@ export class CuitComponent implements OnInit {
   resultado:any = null;
   cuit:string = "";
 
-
-
   constructor(protected router: Router,private cuitService: CuitService ) {
   }
 

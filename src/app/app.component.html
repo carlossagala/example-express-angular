@@ -1,54 +1,25 @@
-<!--
-      <div class="branding">
-        <a routerLink="/" class="nav-link">
-          <span class="logo"></span>
-        </a>
-        <span class="title">
-          <a href="https://github.com/mauriciovigolo/keycloak-angular" target="_blank">keycloak-angular</a>
-          - Anses Heroes
-        </span>
-      </div>
-      <div class="header-nav" >
-        <a routerLink="/" class="active nav-link nav-text">Home</a>
-        <a class="nav-link nav-text" routerLink="/heroes">Heroes</a>
-      </div>
-      <div class="header-actions">
-
-          <button class="nav-icon" >
-
-          </button>
-
-            <div class="userDetails" *ngIf="userDetails">
-              <h2>{{userDetails.username}}</h2>
-              <p>
-                {{userDetails.email}}
-              </p>
-            </div>
-            <a (click)="doLogout()" >Log out</a>
-
-      </div> -->
-
-    <div class="content-container">
-      <main class="content-area">
-        <router-outlet></router-outlet>
-      </main>
-    </div>
-
-
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
+      <div class="container-fluid header-blue">
           <div class="navbar-header">
-              <span class="navbar-brand">NetCore - Keycloack</span>
+              <span class="navbar-brand navbar-btn pull-left logo"><img src="assets/img/logo.svg"></span>
           </div>
-          <ul class="nav navbar-nav" *ngIf="userDetails">
-              <li class="active"><a href="#" *ngIf="userDetails.username">
-                {{userDetails.username}} <span class="sr-only">(current)</span>
-              </a></li>
-              <li><a href="#">Link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><p>{{userDetails.email}}</p></li>
-              <li role="separator" class="divider"></li>
-              <li><a (click)="doLogout()" >Log out</a></li>
+          <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="#" class="anses-nav-element anses-nav-element-font" *ngIf="userDetails">
+                {{userDetails.username}} 
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li><a class="anses-nav-element anses-nav-element-font" href="#">Link</a></li>
+              <li role="separator" class="divider">
+              </li>
+              <li>
+                <p *ngIf="userDetails" class="anses-nav-element anses-nav-element-font">{{userDetails.email}}</p>
+              </li>
+              <li role="separator" class="divider">
+              </li>
+              <li>
+                <a class="anses-nav-element anses-nav-element-font" (click)="doLogout()" >Log out</a>
+              </li>
           </ul>
       </div>
   </nav>

@@ -1,14 +1,16 @@
 
+<div class="container">
 <div class="input-group input-group-sm mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-sm">Cuit</span>
+    <span class="input-group-text " id="inputGroup-sizing-sm" class="">Cuit</span>
   </div>
-  <input type="text" class="form-control" aria-label="Small" [(ngModel)]="cuit" aria-describedby="inputGroup-sizing-sm">
+  <input type="text"  class="form-control" aria-label="Small" [(ngModel)]="cuit" aria-describedby="inputGroup-sizing-sm">
 </div>
+<br/>
+<button type="button" class="btn btn-primary" (click)="consultarCuit()"><i class="fa fa-user"></i> Consulta Cuit </button>
 
-<button type="button" class="btn " (click)="consultarCuit()"> Consultar Cuit </button>
-
-
-<div class="container-fluid" *ngIf="resultado" >
+<br/>
+<div class="alert alert-info" *ngIf="resultado" >
   {{resultado | json}}
+</div>
 </div>

@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { AppAuthGuard } from './keycloak/AppAuthGuard';
 import {CuitComponent} from './cuit/cuit.component'
 import {AppComponent} from './app.component'
 
 
-const routes: Routes = [  {
+const routes: Routes = [
+  {
+    path: 'cuit',
+    component: CuitComponent
+  },
+  {
   path: '',
   redirectTo: '/cuit',
   pathMatch: 'full'
-},{
-  path: 'cuit',
-  component: CuitComponent,
-  //canActivate: [AppAuthGuard],
-//  data: { roles: ['normal'] }
-
-}];
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

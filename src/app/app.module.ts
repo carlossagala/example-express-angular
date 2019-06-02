@@ -11,8 +11,6 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
