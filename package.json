@@ -34,7 +34,7 @@
     "compression": "1.7.4",
     "cookie-parser": "1.4.4",
     "core-js": "2.5.4",
-    "express": "4.16.4",
+    "express": "4.17.3",
     "font-awesome": "4.7.0",
     "http-proxy-middleware": "0.19.1",
     "keycloak-angular": "6.0.0",
